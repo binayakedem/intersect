@@ -27,10 +27,10 @@ const Wedo = () => {
     <div className='mx-7 md:mx-10 lg:mx-28 py-4 md:py-6 lg:py-8'>
         <div className='flex flex-col'>
             <h1 className='text-black font-bold text-lg md:text-xl lg:text-2xl text-center mb-3'>what Can We Do For You ?</h1>
-            <p>At our software development company, we provide a comprehensive suite of services designed to elevate your business. Our expertise spans custom software solutions, mobile app development, and web design, all tailored to meet your unique requirements. We prioritize understanding your specific needs and objectives, ensuring seamless communication throughout the entire development process. With a dedicated team of skilled professionals, we emphasize quality and innovation, delivering products that enhance efficiency and drive growth. Our commitment doesn’t end at delivery; we offer ongoing support and maintenance to ensure your software continues to perform optimally, empowering your business for lasting success.</p>
+            <p data-aos="zoom-in-up" data-aos-duration="1200">At our software development company, we provide a comprehensive suite of services designed to elevate your business. Our expertise spans custom software solutions, mobile app development, and web design, all tailored to meet your unique requirements. We prioritize understanding your specific needs and objectives, ensuring seamless communication throughout the entire development process. With a dedicated team of skilled professionals, we emphasize quality and innovation, delivering products that enhance efficiency and drive growth. Our commitment doesn’t end at delivery; we offer ongoing support and maintenance to ensure your software continues to perform optimally, empowering your business for lasting success.</p>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7 my-2'>
             {data.map((item, index) => (
-            <div key={index} className='bg-green-100 p-4  md:p-10'>
+            <div key={index} className='bg-green-100 p-4  md:p-10' data-aos="flip-right" data-aos-duration="1200">
                 <div className='overflow-hidden md:h-16 md:w-16 h-12 w-12'>
                     <img className='h-full w-full object-cover'src={item.imgSrc} alt={item.title}  />
                 </div>

@@ -79,7 +79,9 @@ const Career = () => {
           {
             data.map((d)=>(
               
-          <Link to={`/career/${d.id}`}>
+          <Link to={`/career/${d.id}`} data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000">
             <div className='h-20 rounded transform hover:translate-y-[-10px] duration-500 ease-in-out bg-[#70BF44] flex flex-row justify-between items-center px-10 '>
           <RiHandbagFill />
           <div>

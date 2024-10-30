@@ -12,7 +12,7 @@ const Contact = () => {
              <h1 className='text-[#FFCD03] font-bold text-3xl'> Contact us</h1>
       </div>
     <div className='mx-7 md:mx-10 lg:mx-28 lg:relative lg:top-[-100px] lg:z-20 '>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-3 bg-[#70BF44] p-9 md:rounded-xl shadow'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-3 bg-[#70BF44] p-9 md:rounded-xl shadow' data-aos="flip-right" data-aos-duration="2000">
         <div className='flex flex-col gap-2 md:gap-5'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6'>
                     <div className='flex flex-col text-gray-100'>

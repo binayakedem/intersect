@@ -88,7 +88,9 @@ const About = () => {
       </div>
       <div className='mx-4 md:mx-12 lg:mx-24 my-8'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-14'>
-          <div className='flex flex-col gap-5 text-gray-800'>
+          <div className='flex flex-col gap-5 text-gray-800' data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
             <h1 className='mt-6 flex flex-row justify-start items-center gap-2 font-bold text-2xl text-[#0047A9] '>About Us</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum a explicabo numquam! Explicabo, commodi. Id autem quae animi deleniti voluptatem cupiditate ipsa maiores aut harum velit, saepe deserunt dolorum reprehenderit sed facere debitis sequi accusantium molestias nam eum labore adipisci impedit reiciendis dolore? Placeat quidem necessitatibus, nobis iste animi aliquid numquam saepe facere alias repellat aspernatur fugit minus, unde veritatis, quod quae sit ipsa nam reprehenderit veniam esse dolorem delectus.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quos necessitatibus eveniet, nam consequatur tenetur rem quam, voluptate nesciunt cum maxime saepe itaque. Perferendis voluptatem, dolore odio eveniet esse culpa.</p>
@@ -123,7 +125,7 @@ const About = () => {
                 data.map((d)=>(
                     
             <div key={d.id}>
-                <div className='relative h-60 w-auto'>
+                <div className='relative h-60 w-auto' data-aos="flip-left" data-aos-duration="1200">
                     <img className='h-full rounded-2xl w-full object-cover hover:scale-105 duratio-500 ease-in-out cursor-pointer' src={d.image} alt="profile" />
                     <div className='absolute inset-0 text-blue-600 text-xl flex justify-end items-end'>
                     <a href="https://www.linkedin.com/"><FaLinkedin size={30}/></a>
