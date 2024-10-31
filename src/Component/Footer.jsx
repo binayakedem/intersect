@@ -4,6 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaPhone ,FaArrowRightLong, FaLocationArrow} from "react-icons/fa6";
 import { FaFacebook,FaInstagram ,FaTwitter,FaYoutube } from "react-icons/fa";
 import logo from '../assets/logo.png'
+import { NavLink } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className='bg-[#132D80]'>
@@ -29,24 +30,24 @@ const Footer = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6'>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="name">Full Name</label>
-                    <input type="text"  placeholder='Full name' className='p-2 rounded-md'/>
+                    <input type="text"  placeholder='Full name' className='p-2 rounded-md text-black'/>
                     </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="email">Email</label>
-                    <input type="email"  placeholder='Email' className='p-2 rounded-md'/>
+                    <input type="email"  placeholder='Email' className='p-2 rounded-md text-black'/>
                     </div>
                 </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="subject">Subject</label>
-                    <input type="text"  placeholder='Subject' className='p-2 rounded-md'/>
+                    <input type="text"  placeholder='Subject' className='p-2 rounded-md text-black'/>
                     </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="Company Name">Company Name</label>
-                    <input type="text"  placeholder='Company Name' className='p-2 rounded-md'/>
+                    <input type="text"  placeholder='Company Name' className='p-2 rounded-md text-black'/>
                     </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="Message">Message</label>
-                    <textarea   placeholder='Message' className='p-2 rounded-md'/>
+                    <textarea   placeholder='Message' className='p-2 rounded-md text-black'/>
                     </div>
                     <div>
                         <button className='flex flex-row items-center bg-[#569C27] text-white gap-1 p-3 rounded-md'><span>Send Message</span><FaArrowRightLong /></button>
@@ -61,9 +62,9 @@ const Footer = () => {
             </div>
             <div className='flex flex-row gap-2'>
                 <a href="www.facebook.com"><FaFacebook size={20} color='white'/></a>
-                <a href="www.facebook.com"><FaYoutube size={20} color='white'/></a>
-                <a href="www.facebook.com"><FaInstagram size={20} color='white'/></a>
-                <a href="www.facebook.com"><FaTwitter size={20} color='white'/></a>
+                <a href="www.youtube.com"><FaYoutube size={20} color='white'/></a>
+                <a href="www.instagram.com"><FaInstagram size={20} color='white'/></a>
+                <a href="www.x.com"><FaTwitter size={20} color='white'/></a>
 
             </div>
 
@@ -79,10 +80,10 @@ const Footer = () => {
             </div>
             <div className='flex flex-col gap-1'>
                 <h1 className='font-bold text-lg text-white'>Links</h1>
-                <a href="www.facebook.com" className='text-white text-lg'>Home</a>
-                <a href="www.facebook.com" className='text-white text-lg'>About</a>
-                <a href="www.facebook.com" className='text-white text-lg'>Project</a>
-                <a href="www.facebook.com" className='text-white text-lg'>Contact</a>
+                <NavLink to="/" className='text-white text-lg'>Home</NavLink>
+                <NavLink to="/about" className='text-white text-lg'>About</NavLink>
+                <NavLink to="/career" className='text-white text-lg'>Career</NavLink>
+                <NavLink to="/contact" className='text-white text-lg'>Contact</NavLink>
             </div>
             <div className='flex flex-col gap-1'>
                 <h1 className='font-bold text-lg text-white'>Connect Us</h1>

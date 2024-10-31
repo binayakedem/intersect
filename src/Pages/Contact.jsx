@@ -1,9 +1,45 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaPhone ,FaArrowRightLong, FaLocationArrow} from "react-icons/fa6";
 import { FaFacebook,FaInstagram ,FaTwitter,FaYoutube } from "react-icons/fa";
 const Contact = () => {
+    const [user, setUser] = useState({
+        name: '', email: '', subject: '',number:'', message: ''
+    });
+    const [botReply, setBotReply] = useState(''); 
+
+    let name, value;
+    const data = (e) => {
+        name = e.target.name;
+        value = e.target.value;
+        setUser({ ...user, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const { name, email, subject,number, message } = user;
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name, email, subject,number, message
+            })
+        };
+
+        const res = await fetch('https://intersect-id-default-rtdb.asia-southeast1.firebasedatabase.app/message.json', options);
+
+        if (res) {
+            alert("Message sent");
+            setUser({ name: '', email: '', subject: '',number:'', message: '' });
+            setBotReply(`Hi ${name}, thanks for reaching out! We have received your message and will get back to you shortly.`);
+        } else {
+            alert("Something went wrong!!");
+        }
+    };
   return (
     <div>
      <div className=' bg-blue-600 text-center flex flex-col h-[50vh] w-full justify-center items-center font-sans'>
@@ -13,34 +49,37 @@ const Contact = () => {
       </div>
     <div className='mx-7 md:mx-10 lg:mx-28 lg:relative lg:top-[-100px] lg:z-20 '>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3 bg-[#70BF44] p-9 md:rounded-xl shadow' data-aos="flip-right" data-aos-duration="2000">
+        
         <div className='flex flex-col gap-2 md:gap-5'>
+
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6'>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="name">Full Name</label>
-                    <input type="text"  placeholder='Full name' className='p-2 rounded-md'/>
+                    <input type="text" name="name" placeholder='Full name' className='p-2 rounded-md text-black'value={user.name} required onChange={data} />
                     </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="email">Email</label>
-                    <input type="email"  placeholder='Email' className='p-2 rounded-md'/>
+                    <input type="email"  name="email" placeholder='Email' className='p-2 rounded-md text-black'value={user.email} required onChange={data}/>
                     </div>
                 </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="subject">Subject</label>
-                    <input type="text"  placeholder='Subject' className='p-2 rounded-md'/>
+                    <input type="text" name="subject" placeholder='Subject' className='p-2 rounded-md text-black'value={user.subject} required onChange={data}/>
                     </div>
                     <div className='flex flex-col text-gray-100'>
-                     <label htmlFor="Company Name">Company Name</label>
-                    <input type="text"  placeholder='Company Name' className='p-2 rounded-md'/>
+                     <label htmlFor="Company Name">Phone Number</label>
+                    <input type="number" name="number"  placeholder='Phone number' className='p-2 rounded-md text-black'value={user.number} required onChange={data}/>
                     </div>
                     <div className='flex flex-col text-gray-100'>
                      <label htmlFor="Message">Message</label>
-                    <textarea   placeholder='Message' className='p-2 rounded-md'/>
+                    <textarea  name="message" placeholder='Message' className='p-2 rounded-md text-black'value={user.message} required onChange={data}/>
                     </div>
                     <div>
-                        <button className='flex flex-row items-center bg-[#2b5510] text-white gap-1 p-3 rounded-full'><span>Send Message</span><FaArrowRightLong /></button>
+                        <button className='flex flex-row items-center bg-[#2b5510] text-white gap-1 p-3 rounded-full'onClick={handleSubmit}><span>Send Message</span><FaArrowRightLong /></button>
                     </div>
                 
             </div>
+       
         <div className='flex flex-col gap-2 md:gap-6'>
                 <div>
                     <h1 className='text-black'>For Product Information</h1>

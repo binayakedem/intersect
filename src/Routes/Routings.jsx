@@ -7,6 +7,7 @@ import Contact from '../Pages/Contact'
 import Applicationform from '../Pages/Applicationform'
 import Career from '../Component/Career'
 import SingleCareer from '../Component/singleCareer'
+import Message from '../Message'
 const Routings = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Routings = () => {
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/service' element={<Services/>}/>
+        <Route path='/message' element={<Message/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/applicationform' element={<Applicationform/>}/>
